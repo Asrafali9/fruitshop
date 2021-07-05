@@ -110,15 +110,31 @@ a:hover{
 
 /* Colors */
 :root{
-    --primary:#EEBF00;
-    --secondary:#232B38;
-    --ternary:#6C6C6C;
-    --danger:#FE4545;
-    --pure:#FEFEFE;
-    --light:#F0F0F0;
-    --heaven:#FFFFFF;
-    --footer:#2D333F;
+    --bg_primary:#fff;
+    --bg_secondary:#eff7ef;
+    --bg_tertiary:#fff;
+    --accent_primary:#ffa500;
+    --accent_secondary:#000d00;
+    --accent_tertiary:#62b162;
+    --text_primary:#0d0800;
+    --text_secondary:#F2F2F2;
+    --text_primary_1:#0d0800;
+    --text_secondary_1:#F2F2F2;
 }
+
+.root_change{
+    --bg_primary:#001000;
+    --bg_secondary:#001300;
+    --bg_tertiary:#001a00;
+    --accent_primary:#ffa500;
+    --accent_secondary:#000d00;
+    --accent_tertiary:#62b162;
+    --text_primary:#F2F2F2;
+    --text_secondary:#0d0800;
+    --text_primary_1:#0d0800;
+    --text_secondary_1:#F2F2F2;
+}
+
 
 
 /* Responsive */
@@ -229,37 +245,55 @@ a:hover{
 }
 
 .btn_primary{
-    background-color: var(--primary);
-    color: var(--heaven);
+    background-color: var(--accent_primary);
+    color: var(--text_secondary_1);
     transition: all .3s;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
     -o-transition: all .3s;
+    cursor: pointer;
 }
 
 .btn_primary:hover{
-    color: var(--primary);
-    background-color: var(--heaven);
-    border: solid 1px var(--primary);
+    background-color: var(--accent_secondary);
+    /* border: solid 1px var(--accent_secondary); */
 }
 
 .btn_secondary{
-    background-color: var(--secondary);
-    color: var(--heaven);
+    background-color: var(--accent_secondary);
+    color: var(--text_secondary_1);
     transition: all .3s;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
     -o-transition: all .3s;
+    cursor: pointer;
 }
 
 .btn_secondary:hover{
-    background-color: var(--heaven);
-    color: var(--secondary);
-    border: solid 1px var(--secondary);
+    background-color: var(--accent_primary);
+    /* border: solid 1px var(--secondary); */
 
 }
+
+.btn_unique{
+    background-color:#62b162;
+    color: var(--text_secondary_1);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    cursor: pointer;
+}
+
+.btn_unique:hover{
+    background-color: var(--accent_secondary);
+    /* border: solid 2px var(--accent_primary); */
+    
+}
+
 
 .text_center{
     text-align: center;
@@ -295,15 +329,16 @@ a:hover{
 
 /* Top Header */
 header.top_header{
-    background-color: var(--secondary);
-    color: var(--pure);
+    background-color: var(--accent_secondary);
+    
+    color: var(--text_secondary);
     font-family: "Raleway-SemiBold";
     padding: 0.75rem 0rem;
 }
 
 header.top_header .container .auth>div a{
     text-decoration: none;
-    color: var(--pure);  
+    color: var(--text_secondary_1);  
 }
 
 header.top_header .container .icons a{
@@ -312,15 +347,112 @@ header.top_header .container .icons a{
 
 header.top_header .container .divider{
     padding: 0 1rem;
+    color: var(--text_secondary_1);
 }
+
+/* header.top_header .container .auth >div:last-child{
+    background-color: var(--accent_tertiary);
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+} */
 
 header.top_header .container .auth>div img{
     margin-right: 0.35rem;
+    width: 15px;
+    height: 15px;
 }
+
+header.top_header .container .auth >div:last-child a{
+    font-size: 12px;
+    
+}
+
+/* theme button */
+header.top_header .container .auth >div:last-child.btn4 a {
+    position: relative;
+    padding: 3px 35px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100px;
+    overflow: hidden;
+    border-radius: 40px;
+    margin:auto;
+  }
+  
+  header.top_header .container .auth >div:last-child.btn4 a span {
+    position: relative;
+    color: #fff;
+    font-size: 16px;
+    margin-left: -18px;
+    letter-spacing: 2px;
+    z-index: 1;
+  }
+  
+  header.top_header .container .auth >div:last-child.btn4 a .liquid {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #62b162;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    transition: .5s;
+  }
+  
+  header.top_header .container .auth >div:last-child.btn4 a .liquid::after,
+  header.top_header .container .auth >div:last-child.btn4 a .liquid::before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #000;
+  }
+  
+  header.top_header .container .auth >div:last-child.btn4 a .liquid::before {
+    
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    animation: animate 5s linear infinite;
+  }
+  
+  header.top_header .container .auth >div:last-child.btn4 a .liquid::after {
+    
+    border-radius: 40%;
+    background: rgba(20, 20, 20, .5);
+    animation: animate 10s linear infinite;
+  }
+  
+  header.top_header .container .auth >div:last-child.btn4 a:hover .liquid{
+    top: -120px;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+
+
+
+
+
 
 /* Bottom Header */
 header.bottom_header{
     padding: 1.5rem 0;
+    background-color: var(--bg_primary);
+    color: var(--text_primary);
 }
 
 header.bottom_header .container h5{
@@ -342,11 +474,13 @@ header.bottom_header .container .timing img{
 /* Nav Menu */
 nav.navbar{
     padding: 1rem 0;
-    background-color: var(--heaven);
+    background-color: var(--bg_primary);
+    color: var(--text_secondary);
+    
 }
 
 nav.navbar .container .menu_links a{
-    color: var(--secondary);
+    color: var(--text_primary);
     font-size: 1rem;
     font-family: "Raleway-SemiBold";
     padding: 1rem 1.5rem;
@@ -358,13 +492,13 @@ nav.navbar .container .menu_links a{
 }
 
 nav.navbar .container .menu_links a.active{
-    background-color: var(--primary);
-    color: var(--pure);
+    background-color: var(--accent_primary);
+    color: var(--text_secondary_1);
 }
 
 nav.navbar .container .menu_links a:hover{
-    background-color: var(--primary);
-    color: var(--pure);
+    background-color: var(--accent_primary);
+    /* color: var(--text_secondary); */
 }
 
 
@@ -392,7 +526,10 @@ header.hero .container .hero_secondary_img img{
     width: 100%;
     height:500px;
     object-fit: contain;
+
 }
+
+
 
 header.hero .container .hero_secondary_img img{
     position: absolute;
@@ -403,7 +540,10 @@ header.hero .container .hero_secondary_img img{
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
+  
 }
+
+
 
 
 header.hero .container .hero_content .welcome img{
@@ -423,11 +563,11 @@ header.hero .container .hero_content h1{
     font-family: "Raleway-ExtraBold";
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--secondary);
+    /* color: var(--secondary); */
 }
 
 header.hero .container .hero_content h1 span{
-    color: var(--primary);
+    color: var(--accent_primary);
 }
 
 header.hero .container .hero_content p{
@@ -441,11 +581,12 @@ header.hero .container .hero_content p{
 /* Product Section */
 .product{
     padding: 4rem 0;
-    background-color: var(--light) ;
+    background-color: var(--bg_secondary) ;
+    color: var(--text_primary);
 }
 
 .food_card{
-    background-color: var(--heaven);
+    background-color: var(--bg_tertiary);
 }
 
 .product .container .food_img img{
@@ -474,19 +615,18 @@ header.hero .container .hero_content p{
 }
 
 .product .container .food_card h3{
-    color: var(--danger);
-    font-family: "Ralewy-Medium";
+    /* color: var(--danger); */
+    font-family: "Raleway-Medium";
     margin-bottom: 1rem;
 }
 
 .product .container .food_card .product_btn button{
-    border: 2px solid var(--primary);
+    border: 2px solid var(--accent_tertiary);
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-    background-color: var(--heaven);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -499,7 +639,7 @@ header.hero .container .hero_content p{
 }
 
 .product .container .food_card .product_btn button img{
-    background-color: var(--primary);
+    background-color: var(--accent_tertiary);
     padding: 0.50rem;
     height: 34px;
     
@@ -508,16 +648,16 @@ header.hero .container .hero_content p{
 .product .container .food_card .product_btn button span{
     font-size: 1rem;
     padding: 0 1.2rem;
-    color: var(--secondary);
+    color: var(--text_primary_1);
     font-family: "Raleway-Medium";
 }
 
 .product .container .food_card .product_btn button:hover{
-    background-color: var(--primary);
+    background-color: var(--accent_tertiary);
 }
 
 .product .container .food_card .product_btn button span:hover{
-    color: var(--heaven);
+    color: var(--text_secondary_1);
 
 }    
 
@@ -527,14 +667,18 @@ header.hero .container .hero_content p{
 }
 
 .slick-prev:before,.slick-next:before  {
-    color: var(--primary);
+    color: var(--accent_tertiary);
     font-size: 30px;
   
 }
 
 .slick-dots li button:before {
-    color: var(--primary);
+    color: var(--accent_tertiary);
     opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--accent_primary);
 }
 
 .slick-dots{
@@ -550,6 +694,9 @@ header.hero .container .hero_content p{
 /* Fresh Meal section */
 section.fresh_meal{
     padding: 4rem 0;
+    background-color: var(--bg_primary);
+    color: var(--text_primary);
+
 }
 
 section.fresh_meal .meal_wrapper .meal_img img{
@@ -558,7 +705,7 @@ section.fresh_meal .meal_wrapper .meal_img img{
 
 section.fresh_meal .meal_wrapper .meal_content h2{
     font-family: "Raleway-Bold";
-    color: var(--secondary);
+    /* color: var(--secondary); */
     line-height: 1.8rem;
     font-size: 1.35rem;
 }
@@ -571,10 +718,11 @@ section.fresh_meal .meal_wrapper .meal_content p{
 
 /* Services Section */
 section.services{
-    background-color: var(--light);
+    background-color: var(--bg_secondary);
     padding: 4rem 0;
     position: relative;
     z-index: 0;
+    color: var(--text_primary);
 }
 
 section.services .container .box_wrapper{
@@ -583,7 +731,7 @@ section.services .container .box_wrapper{
 }
 
 section.services .container .box_wrapper .box{
-    background-color: var(--heaven);
+    background-color: var(--bg_tertiary);
     margin-right: 2rem;
     padding: 2rem;
     position: relative;
@@ -604,16 +752,16 @@ section.services .container .box_wrapper .box img{
 section.services .container .box_wrapper .box h2{
     font-family: "Raleway-Bold";
     font-size: 1.1rem;
-    color: var(--secondary);
+    /* color: var(--secondary); */
     margin-bottom: 1rem;
 }
 
 section.services .container .box_wrapper .box2 h2{
-    color: var(--primary);
+    color: var(--accent_primary);
 }
 
 section.services .container .box_wrapper .box p{
-    columns: var(--secondary);
+    /* columns: var(--secondary); */
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -630,7 +778,7 @@ section.big_deals{
     background-repeat: no-repeat;
     padding: 3.5rem 0  5rem;
     background-attachment: fixed;
-    color: var(--pure);
+    color: var(--text_secondary_1);
    
 }; 
 
@@ -648,7 +796,7 @@ section.big_deals .container .deals_wrapper .deal span:first-child{
 section.big_deals .container .deals_wrapper .deal{
     height: 130px;
     width: 130px;
-    background-color: var(--primary);
+    background-color: var(--accent_primary);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -664,13 +812,14 @@ section.big_deals .container .deals_wrapper .deal{
 
 /* Blog Section */
 section.blogs{
-    background-color: var(--light);
+    background-color: var(--bg_secondary);
     padding: 3rem 0 2rem;
+    color: var(--text_primary);
 }
 
 section.blogs .container .blog_wrapper .blog_1{
     margin-right: 2rem;
-    background-color: var(--heaven);
+    background-color: var(--bg_tertiary);
 
 }
 
@@ -679,7 +828,7 @@ section.blogs .container .blog_btn{
 }
 
 section.blogs .container .blog_wrapper .blog_2{
-    background-color: var(--heaven);
+    background-color: var(--bg_tertiary);
 
 }
 
@@ -700,7 +849,7 @@ section.blogs .container .blog_wrapper h2{
     font-size: 1.03rem;
     font-family: "Raleway-Medium";
     margin-bottom: 1rem;
-    color: var(--secondary);
+    /* color: var(--secondary); */
 }
 
 section.blogs .container .blog_wrapper p{
@@ -715,7 +864,7 @@ section.blogs .container .blog_wrapper .post_content{
 
 /* Subscribe Section */
 section.subscribe{
-   background-color: var(--primary); 
+   background-color: var(--accent_primary); 
    padding: 3rem 0;
 }
 
@@ -734,11 +883,11 @@ section.subscribe .container .sub_wrapper  .sub_content p{
     line-height: 1.6;
     margin: 1.2rem 0;
     font-family: "Raleway-Medium";
-    color: var(--secondary);
+    /* color: var(--secondary); */
 }
 
 section.subscribe .container .sub_wrapper  .sub_content .input_group{
-    background-color: var(--heaven);
+    background-color: var(--text_secondary_1);
     border-radius: 5px 5px 5px 5px ;
     -webkit-border-radius: 5px 5px 5px 5px ;
     -moz-border-radius: 5px 5px 5px 5px ;
@@ -801,16 +950,20 @@ section.contact .contact_box .contact_box_content span:last-child{
 section.contact .contact_wrapper .contact_content{
     display: grid;
     place-items: center;
+    background-color: var(--bg_primary);
+    color: var(--text_primary);
+
 }
 
 
 
 /* Footer Section */
 section.footer{
-    background-color: var(--footer);
-    color: var(--pure);
+    background-color: var(--accent_secondary);
+    color: var(--text_secondary_1);
     padding: 4rem 0;
 }
+
 
 section.footer .container .quick ul li,
 section.footer .container .follow ul li{
@@ -820,7 +973,7 @@ section.footer .container .follow ul li{
 
 section.footer .container .quick ul li a,
 section.footer .container .follow ul li a{
-    color: var(--pure);
+    color: var(--text_secondary_1);
     font-size: 0.9rem;
 }
 
@@ -828,7 +981,7 @@ section.footer .container .follow ul li a{
 section.footer .container h3{
     font-family: Raleway-Medium;
     font-size: 1rem;
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 1px solid var(--accent_primary);
     margin-bottom: 1rem;
     padding-bottom: 1rem;
 }
@@ -881,8 +1034,8 @@ section.footer .container .follow ul li a img{
 
 /* Copyright Section */
 footer.copyright{
-    background-color: var(--secondary);
-    color: var(--pure);
+    background-color: var(--accent_secondary);
+    color: var(--text_secondary_1);
     padding: 1rem 0;
 }
 
@@ -892,5 +1045,5 @@ footer.copyright > div{
 }
 
 footer.copyright a{
-    color: var(--primary);
+    color: var(--accent_primary);
 }
